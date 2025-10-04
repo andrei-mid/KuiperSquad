@@ -1,0 +1,417 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+ header{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+h2{
+     margin-left: 10px;
+     font-size: 1.7em;
+}
+#logodiv{
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 15px;
+    display: inline-block;
+    background-color: #61677A;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+    padding-right: 16px;
+    border-radius: 35px;
+}
+#logolink{
+    display: inline-block;
+    margin-top: 0px;
+}
+.logo{
+    height: 70px;
+    margin-top: 10px;
+    margin-left: 22px;
+    margin-bottom: 5px;
+    display: flex;
+}
+
+nav{
+    display: none;
+}
+
+body{
+    background-image: linear-gradient(to bottom, #6EACDA, #03346E);
+    background-repeat: repeat-y; 
+    background-size: 100% 300%; 
+    min-height: 100vh;
+    margin: 0;
+    display: block;
+}
+
+.dropbtn {
+    background-color: #61677A;
+    border-radius: 15px;
+    margin-right: 15px;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn:hover, .dropbtn:focus {
+    background-color: #DD6B4D;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position:fixed;
+    margin-right: 10px;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 50px; 
+    right: 10px; 
+    transform: translateY(50px); 
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #DD6B4D;}
+
+  .show {display:block;}
+
+  footer{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: center;
+    background-color: #61677A;
+  }
+  #social{
+    height: 36px;
+    margin-top: 7px;
+  }
+  #socitext{
+    text-decoration: none;
+    color: black;
+    font-size: 19px;
+    margin: 15px;
+  }
+  .footer1{
+    display: flex;
+    justify-content: center;
+    position: relative;
+    bottom: 0;
+  }
+  #meet{
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    padding: 5px;
+    font-size: 15px;
+    text-decoration: none;
+    color: black;
+    font-style: bold;
+    margin: 10px;
+  }
+  #meet:hover{
+    background-color: #DD6B4D;
+    scale: 1.05;
+  }
+
+  #nav1:hover{
+    background-color: #DD6B4D;
+  }
+
+
+    #meniuside{
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #61677A;
+    padding:20px;
+    margin-left: 20px;
+    margin-top: 30px;
+    border-radius: 20px;
+  } 
+  #meniuside li{
+    background-color: #FFF6E0;
+    padding: 5px;
+    padding-inline: 10px;
+    border-radius: 13px;
+    font-size: 20px;
+    margin: 5px;
+    list-style: none;
+  }
+  #meniuside li a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    color: black;
+  }
+
+  #meniuside li:hover{
+    background-color: #DD6B4D;
+  }
+
+  .card{
+    cursor: pointer;
+    display: grid;
+    grid-template-columns: 300px;
+    grid-template-rows: 210px 250px 80px;
+    grid-template-areas: "image" "text" "stats";
+    width: 300px;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-radius: 18px;
+    background: white;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+    text-align: center;
+  }
+  .card-image{
+    grid-area: image;
+    background: url("../poze/DSC_0581.JPG");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+  }
+
+  .card-image-the_magic_behind_flight{
+    grid-area: image;
+    background: url("../poze_articole/avion\ aterizeaza.jpg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+  }
+
+  .card-image-why_do_planes_have_round_windows{
+    grid-area: image;
+    background: url("../poze_articole/airplane-window.jpg");
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    background-size: cover;
+  }
+  .card-text{
+    grid-area: text;
+    margin: 25px;
+  }
+  .card-text .date{
+    color: red;
+    font-size: 15px;
+  }
+  .card-text p{
+    color: black;
+    font-size: 15px;
+    font-weight: 300;
+  }
+  .card-text h2{
+    margin-top: 0px;
+    font-size: 28px;
+  }
+
+  .card-stats{
+    grid-area: stats;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: red;
+  }
+  .card-stats .stat{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 10px;
+    color: white;
+  }
+  .card-stats .type{
+    font-size: 11px;
+    font-weight: 300;
+    text-transform: uppercase;
+  }
+  .card-size .value{
+    font-size: 22px;
+    font-weight: 500;
+  }
+  .card-stats .border{
+    border-left: 1px solid red;
+    border-right: 1px solid red;
+  }
+  .card-stats .value sup{
+    font-size: 12px;
+  }
+
+.ul-cards{
+    display: contents;
+}
+
+.ul-cards li{
+    list-style: none;
+    margin-inline: 20px;
+}
+
+.main-container{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 194px 80vw;
+    grid-template-rows: 290px 100vh;
+    gap: 20px;
+    margin-bottom: 75px;
+}
+
+.cards-container{
+    display: grid;
+    gap: 40px;
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+
+}
+
+#progress{
+  position: fixed;
+  bottom: 90px;
+  right: 10px;
+  height: 70px;
+  width: 70px;
+  display: none;
+  place-items: center;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+#progress-value{
+  display: block;
+  height: calc(100% - 15px);
+  width: calc(100% - 15px);
+  background-color: white;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 35px;
+  color: black;
+}
+
+  @media (min-width: 1040px)
+  {
+    .dropdown{
+      display: none;
+    }
+    nav ul{
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 5px;
+        padding-inline: 20px;
+    }
+     nav li{
+        margin: 5px;
+    }
+    #nav1{
+        text-decoration: none;
+        font-size: 1.2em;
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+        margin: 5px;
+        padding: 10px;
+        background-color: #FFF6E0;
+        border-radius: 15px;
+    }
+
+    #nav2{
+      text-decoration: none;
+      font-size: 1.2em;
+      color: black;
+      font-family: 'Courier New', Courier, monospace;
+      margin: 5px;
+      padding: 10px;
+      background-color: #DD6B4D;
+      border-radius: 15px;
+  }
+
+    nav{
+        display: flex;
+        background-color: #61677A ;
+        margin-top: 10px;
+        padding: 20px;
+        border-radius: 20px;
+        margin-right: 35px;
+    }  
+
+    
+    header{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   h2{
+        margin-left: 10px;
+        font-size: 1.9em;
+   }
+   #logodiv{
+       margin: 18px;
+       margin-left: 18px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       background-color: #61677A;
+       padding: 7px;
+       padding-right: 25px;
+       border-radius: 35px;
+   }
+   #logolink{
+       display: inline-block;
+       margin-top: 0px;
+   }
+   .logo{
+       height: 70px;
+       margin-top: 10px;
+       margin-left: 22px;
+       margin-bottom: 5px;
+       display: flex;
+   }
+
+   footer{
+    margin-top: 60px;
+    grid-template-columns: auto auto auto 300px;
+  }
+  #social{
+    height: 41px;
+    margin-top: 6px;
+  }
+  .footer1{
+    margin: 10px;
+    margin-inline: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  #meet{
+    margin-left: 120px;
+    background-color: #D9D9D9;
+    border-radius: 15px;
+    padding: 6px;
+    padding-inline: 10px;
+    font-size: 21px;
+    text-decoration: none;
+    color: black;
+    font-style: bold;
+  }
+
+  }
