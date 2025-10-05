@@ -58,7 +58,7 @@ button.addEventListener('click', async function() {
 
     await delay(1500);
 
-    window.location.href = "../html/index.html";
+    window.location.href = "https://kuipersquad.onrender.com";
 });
 
 // To ensure that text changes occur in sequence
@@ -73,3 +73,4 @@ let logoApasat = document.getElementById('logodiv');
 logoApasat.addEventListener("click", () => {
     window.location.href = "../html/index.html";
 });
+
