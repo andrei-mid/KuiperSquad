@@ -55,13 +55,13 @@ function myFunction() {
   let butonApasat = document.getElementById('meet');
 
   butonApasat.addEventListener("click", () => {
-      window.location.href = "../html/team.html";
+      window.location.href = "html/team.html";
   });
 
   let logoApasat = document.getElementById('logodiv');
 
   logoApasat.addEventListener("click", () => {
-      window.location.href = "../html/index.html";
+      window.location.href = "html/index.html";
   });
 
 
