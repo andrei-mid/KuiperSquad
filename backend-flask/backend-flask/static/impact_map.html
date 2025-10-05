@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_99d8c75d5da6a4f9227fa06dd6846f71 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_99d8c75d5da6a4f9227fa06dd6846f71" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_99d8c75d5da6a4f9227fa06dd6846f71 = L.map(
+                "map_99d8c75d5da6a4f9227fa06dd6846f71",
+                {
+                    center: [45.0, 25.0],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 5,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_35f29f795a8a6c8ee609aef074aad564 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_35f29f795a8a6c8ee609aef074aad564.addTo(map_99d8c75d5da6a4f9227fa06dd6846f71);
+        
+    
+            var marker_9c212761c867955cceca5493ad8756fc = L.marker(
+                [45.0, 25.0],
+                {
+}
+            ).addTo(map_99d8c75d5da6a4f9227fa06dd6846f71);
+        
+    
+        var popup_567543d2f39681359344ba37131e4ec0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_125c1ab0249ae52132b7983f888eb9cf = $(`<div id="html_125c1ab0249ae52132b7983f888eb9cf" style="width: 100.0%; height: 100.0%;">Impact site</div>`)[0];
+                popup_567543d2f39681359344ba37131e4ec0.setContent(html_125c1ab0249ae52132b7983f888eb9cf);
+            
+        
+
+        marker_9c212761c867955cceca5493ad8756fc.bindPopup(popup_567543d2f39681359344ba37131e4ec0)
+        ;
+
+        
+    
+    
+            var circle_150593db5afd6f51749e3894e2df07b3 = L.circle(
+                [45.0, 25.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "red", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.9, "radius": 201417.8941607274, "stroke": true, "weight": 3}
+            ).addTo(map_99d8c75d5da6a4f9227fa06dd6846f71);
+        
+    
+        var popup_424b33d991d8584e6d68d6154b788565 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5407140dfed4aa7167be5da7858ee43c = $(`<div id="html_5407140dfed4aa7167be5da7858ee43c" style="width: 100.0%; height: 100.0%;">Energie: 65370.85 Mt TNT Raza: 201.42 km</div>`)[0];
+                popup_424b33d991d8584e6d68d6154b788565.setContent(html_5407140dfed4aa7167be5da7858ee43c);
+            
+        
+
+        circle_150593db5afd6f51749e3894e2df07b3.bindPopup(popup_424b33d991d8584e6d68d6154b788565)
+        ;
+
+        
+    
+    
+            var circle_12880d6c8a3c77a209c49451db58e6de = L.circle(
+                [45.0, 25.0],
+                {"bubblingMouseEvents": true, "color": "orange", "dashArray": "6,6", "dashOffset": null, "fill": false, "fillColor": "orange", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 261843.26240894562, "stroke": true, "weight": 3}
+            ).addTo(map_99d8c75d5da6a4f9227fa06dd6846f71);
+        
+    
+        var popup_7104b019b04e037840bddacdb7301c2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_facf390d2e1eff71570338d43479b43a = $(`<div id="html_facf390d2e1eff71570338d43479b43a" style="width: 100.0%; height: 100.0%;">Energie: 65370.85 Mt TNT Raza: 201.42 km</div>`)[0];
+                popup_7104b019b04e037840bddacdb7301c2a.setContent(html_facf390d2e1eff71570338d43479b43a);
+            
+        
+
+        circle_12880d6c8a3c77a209c49451db58e6de.bindPopup(popup_7104b019b04e037840bddacdb7301c2a)
+        ;
+
+        
+    
+    
+            var circle_abd0e58c349769bf16c6a5fbead79eae = L.circle(
+                [45.0, 25.0],
+                {"bubblingMouseEvents": true, "color": "green", "dashArray": "3,8", "dashOffset": null, "fill": false, "fillColor": "green", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.7, "radius": 342410.4200732366, "stroke": true, "weight": 3}
+            ).addTo(map_99d8c75d5da6a4f9227fa06dd6846f71);
+        
+    
+        var popup_486258b53d7439106eb7d9cdcf655309 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b7aac1df1c90eb46c3af4153c6f12273 = $(`<div id="html_b7aac1df1c90eb46c3af4153c6f12273" style="width: 100.0%; height: 100.0%;">Energie: 65370.85 Mt TNT Raza: 201.42 km</div>`)[0];
+                popup_486258b53d7439106eb7d9cdcf655309.setContent(html_b7aac1df1c90eb46c3af4153c6f12273);
+            
+        
+
+        circle_abd0e58c349769bf16c6a5fbead79eae.bindPopup(popup_486258b53d7439106eb7d9cdcf655309)
+        ;
+
+        
+    
+    
+            var layer_control_fb590d1a6d7db1cc6b529e6ff0c55885_layers = {
+                base_layers : {
+                    "openstreetmap" : tile_layer_35f29f795a8a6c8ee609aef074aad564,
+                },
+                overlays :  {
+                },
+            };
+            let layer_control_fb590d1a6d7db1cc6b529e6ff0c55885 = L.control.layers(
+                layer_control_fb590d1a6d7db1cc6b529e6ff0c55885_layers.base_layers,
+                layer_control_fb590d1a6d7db1cc6b529e6ff0c55885_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": false,
+  "autoZIndex": true,
+}
+            ).addTo(map_99d8c75d5da6a4f9227fa06dd6846f71);
+
+        
+</script>
+</html>
