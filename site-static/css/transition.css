@@ -1,0 +1,38 @@
+body {
+  background-image: url("../photos/background.jpg");
+  background-size: cover;     
+  background-position: center; 
+}
+
+.cookies{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    grid-template-rows: auto;
+    justify-content: center;
+    padding-top: 10px;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    display: none;
+}
+
+#cookies-btn{
+    justify-content: center;
+    margin: 20px;
+    background-color: antiquewhite;
+    padding: 13px;
+    border-radius: 17px;
+}
+
+#cookiep{
+    margin-top: 30px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+#linkc{
+    text-decoration: none;
+    color: yellow;
+}

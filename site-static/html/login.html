@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(120deg, #3498db, #8e44ad);
+        }
+
+        .container {
+            width: 900px;
+            height: 550px;
+            display: flex;
+            border-radius: 15px;
+            overflow: hidden;
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .left {
+            width: 50%;
+            background: #2c3e50;
+            color: #fff;
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .left h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .left p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .right {
+            width: 50%;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .form-box {
+            display: none;
+        }
+
+        .form-box.active {
+            display: block;
+        }
+
+        .right h2 {
+            margin-bottom: 15px;
+            font-size: 2rem;
+            color: #333;
+        }
+
+        .right a {
+            font-size: 0.9rem;
+            color: #3498db;
+            text-decoration: none;
+            margin-bottom: 20px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .input-box {
+            margin-bottom: 15px;
+        }
+
+        .input-box input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            outline: none;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .input-box input:focus {
+            border-color: #3498db;
+            box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+        }
+
+        .options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            font-size: 0.9rem;
+        }
+
+        .options label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        .options input {
+            margin-right: 8px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #2980b9;
+        }
+
+        .social-login {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .social-login button {
+            width: 48%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            color: #fff;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .facebook {
+            background: #3b5998;
+        }
+
+        .facebook:hover {
+            background: #2d4373;
+        }
+
+        .twitter {
+            background: #55acee;
+        }
+
+        .twitter:hover {
+            background: #2795e9;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <h1>Hello Friend!</h1>
+            <p>Welcome to our platform. Please login if you already have an account,
+                or create a new one to get started.</p>
+        </div>
+
+        <div class="right">
+            <!-- LOGIN FORM -->
+            <div class="form-box active" id="login-form">
+                <h2>Login</h2>
+                <a onclick="showForm('register-form')">Not registered yet? Create an account</a>
+                <form>
+                    <div class="input-box">
+                        <input type="text" placeholder="Username or Email" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="options">
+                        <label><input type="checkbox"> Remember me</label>
+                        <a href="#">Forgot Password?</a>
+                    </div>
+                    <button type="submit" class="btn">Login</button>
+                    <div class="social-login">
+                        <button type="button" class="facebook">Login with Facebook</button>
+                        <button type="button" class="twitter">Login with Twitter</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- REGISTER FORM -->
+            <div class="form-box" id="register-form">
+                <h2>Create Account</h2>
+                <a onclick="showForm('login-form')">Already have an account? Login here</a>
+                <form>
+                    <div class="input-box">
+                        <input type="text" placeholder="Username" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Password" required>
+                    </div>
+                    <div class="input-box">
+                        <input type="password" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="btn">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showForm(formId) {
+            document.getElementById("login-form").classList.remove("active");
+            document.getElementById("register-form").classList.remove("active");
+            document.getElementById(formId).classList.add("active");
+        }
+    </script>
+</body>
+
+</html>

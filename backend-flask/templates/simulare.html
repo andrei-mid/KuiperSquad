@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simulare Asteroid</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/simulare.css') }}">
+</head>
+<body>
+    <div class="page-container">
+        <h1>Simulare Orbită Asteroid</h1>
+
+        <!-- Container principal pentru partea de sus -->
+        <div class="top-container">
+
+            <!-- Coloana stângă: formulare -->
+            <div class="left-column">
+
+                <!-- Formular selectare asteroid -->
+                <div class="asteroid-form">
+                    <form method="POST">
+                        <label for="asteroid_id">Alege asteroid:</label><br>
+                        <select name="asteroid_id" id="asteroid_id" required>
+                            <option value="">-- Select --</option>
+                            {% for name, aid in asteroid_list %}
+                                <option value="{{ aid }}" {% if asteroid_name == name %}selected{% endif %}>{{ name }}</option>
+                            {% endfor %}
+                        </select><br>
+                        <button type="submit">Vezi orbita</button>
+                    </form>
+                </div>
+
+                <!-- Informații asteroid selectat -->
+                {% if asteroid_data %}
+                <!-- <div class="asteroid-info">
+                    <h3>{{ asteroid_data.name }}</h3>
+                    <ul>
+                        <li><strong>ID:</strong> {{ asteroid_data.id }}</li>
+                        <li><strong>Diametru mediu:</strong> {{ asteroid_data.diameter_km }} km</li>
+                        <li><strong>Magnitudine absolută (H):</strong> {{ asteroid_data.h }}</li>
+                        <li><strong>Viteză aprox.:</strong> {{ asteroid_data.velocity_kms }} km/s</li>
+                        <li><strong>Data apropierii:</strong> {{ asteroid_data.close_approach_date }}</li>
+                        <li><strong>Periculos:</strong> {{ 'Da' if asteroid_data.is_potentially_hazardous else 'Nu' }}</li>
+                    </ul>
+                </div> -->
+                {% endif %}
+                
+                <!-- Formular simulare impact -->
+                {% if asteroid_name %}
+                <div class="impact-form">
+                    <h2>Simulează impactul navetei</h2>
+                    <div class="form-container">
+                        <form id="impactForm">
+                            <input type="hidden" name="asteroid_id" value="{{ asteroid_name }}">
+                            <label for="mass_ship">Masă navetă [kg]:</label><br>
+                            <input type="number" name="mass_ship" id="mass_ship" required><br>
+                            <label for="speed_ship">Viteză navetă [km/s]:</label><br>
+                            <input type="number" name="speed_ship" id="speed_ship" step="0.1" required><br>
+                            <label for="angle_deg">Unghi impact [°]:</label><br>
+                            <input type="number" name="angle_deg" id="angle_deg" step="1" required><br>
+                            <button type="button" onclick="simulateImpact()">Simulează impact</button>
+                        </form>
+                    </div>
+                    <p id="impactResult" style="color:green;"></p>
+                </div>
+                {% endif %}
+
+                <!-- Harta impactului: mutată sub formulare în stânga -->
+                {% if asteroid_name %}
+                <div class="map-container">
+                    <h3>Harta impactului:</h3>
+                    <iframe src="{{ url_for('static', filename='impact_map.html') }}{% if map_version %}?v={{ map_version }}{% endif %}"></iframe>
+                </div>
+                {% endif %}
+
+            </div> <!-- închidere .left-column -->
+
+            <!-- Coloana dreaptă: GIF animație -->
+            {% if gif_path %}
+            <div class="right-column">
+                <h2>Orbită simulată</h2>
+
+                <!-- imaginea / animația orbitei -->
+                <div class="orbita-container">
+                    <img src="{{ gif_path }}" alt="Orbita simulata" class="orbita">
+                </div>
+
+                <!-- Date asteroid afișate sub orbita simulată -->
+                {% if asteroid_data %}
+                <div class="asteroid-info right-info">
+                    <h3>{{ asteroid_data.name }}</h3>
+                    <ul>
+                        <li><strong>ID:</strong> {{ asteroid_data.id }}</li>
+                        <li><strong>Diameter:</strong> {{ asteroid_data.diameter_km }} km</li>
+                        <li><strong>Magnitude (H):</strong> {{ asteroid_data.h }}</li>
+                        <li><strong>Aprox. velocity:</strong> {{ asteroid_data.velocity_kms }} km/s</li>
+                        <li><strong>Date of approach:</strong> {{ asteroid_data.close_approach_date }}</li>
+                        <li><strong>Dangerous:</strong> {{ 'YES' if asteroid_data.is_potentially_hazardous else 'NO' }}</li>
+                    </ul>
+                </div>
+                {% endif %}
+            </div>
+            {% endif %}
+
+        </div>
+
+        <!-- Container jos: distanța de apropiere și harta impactului -->
+        <div class="bottom-container" style="margin-top:20px; text-align:center;">
+
+            <!-- Afisează noua distanță de apropiere -->
+            {% if new_approach_km %}
+            <p style="color:green; font-weight:bold;">
+                Noua distanță de apropiere estimată: {{ new_approach_km|round(2) }} km
+            </p>
+            {% endif %}
+
+        </div>
+    </div> <!-- /.page-container -->
+</body>
+</html>
